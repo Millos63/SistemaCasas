@@ -1,0 +1,91 @@
+<div class="col-md-4-offset-md-2">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <p>Tipo de propiedad:</p>
+                    <input type="text" name="propertyType" [(ngModel)]="property.propertyType" placeholder="Introducir Tipo de Propiedad" class="form-control" autofocus>
+                </div>
+                <br>
+                <p>Dirección:</p>
+                <div class="form-group">
+                    <input type="text" name="streetAddress" [(ngModel)]="property.streetAddress" placeholder="Introducir Dirección" class="form-control" autofocus>
+                </div>
+                <br>
+                <p>Ciudad: </p>
+                <div class="form-group">
+                    <input type="text" name="city" [(ngModel)]="property.city" placeholder="Introducir Ciudad" class="form-control" autofocus>
+                </div>
+                <br>
+                <p>Estado:</p>
+                <div class="form-group">
+                    <input type="text" name="stateProvince" [(ngModel)]="property.stateProvince" placeholder="Introducir Estado" class="form-control" autofocus>
+                </div>
+                <br>
+                <p>Código Postal: </p>
+                <div class="form-group">
+                    <input type="text" name="zipCode" [(ngModel)]="property.zipCode" placeholder="Introducir Código Postal " class="form-control" autofocus>
+                </div>
+                <br>
+                <P>Precio:</P>
+                <div class="form-group">
+                    <input type="text" name="price" [(ngModel)]="property.price" placeholder="Introducir Precio:" class="form-control" autofocus>
+                </div>
+                <br>
+                <p>Número de cuartos:</p>
+                <div class="form-group">
+                    <input type="text" name="numBedrooms" [(ngModel)]="property.numBedrooms" placeholder="Introducir Número de Cuartos " class="form-control" autofocus>
+                </div>
+                <br>
+                <p>Número de baños:</p>
+                <div class="form-group">
+                    <input type="text" name="numBathrooms" [(ngModel)]="property.numBathrooms" placeholder="Introducir Número de Baños" class="form-control" autofocus>
+                </div>
+                <br>
+                <p>Metros de terreno: </p>
+                <div class="form-group">
+                    <input type="text" name="landMeters" [(ngModel)]="property.landMeters" placeholder="Introducir Metros de Terreno" class="form-control" autofocus>
+                </div>
+                <br>
+                <p>Metros de construcción: </p>
+                <div class="form-group">
+                    <input type="text" name="constructionMeters" [(ngModel)]="property.constructionMeters" placeholder="Introducir Metros de Construcción" class="form-control" autofocus>
+                </div>     
+                <br>
+                <p>Tamaño de Garaje: </p>
+                <div class="form-group">
+                    <input type="text" name="garageSize" [(ngModel)]="property.garageSize" placeholder="Introducir el Tamaño de Garaje" class="form-control" autofocus>
+                </div>
+                <br>
+                <p>Tamaño de Sisterna: </p>
+                <div class="form-group">
+                    <input type="text" name="sisternSize" [(ngModel)]="property.sisternSize" placeholder="Introducir Tamaño de la Sisterna" class="form-control" autofocus>
+                </div>
+                <br>
+                <p>Bonus: </p>
+                <div class="form-group">
+                    <input type="text" name="bonus" [(ngModel)]="property.bonus" placeholder="Introducir Bonus" class="form-control" autofocus>
+                </div>
+
+              
+                <br>
+                <p>Foto: </p>         
+                <div class="form-group">
+                    <input type="text" name="photo" [(ngModel)]="property.photo" placeholder="Introducir Foto" class="form-control" autofocus>
+                </div>
+                <br>
+               
+                <button class="btn btn-success btn-block" (click)="saveNewProperty()" routerLink="/Properties">Save</button>
+                <button class="btn btn-success btn-block" (click)="update()" routerLink="/Properties" style="padding-left: 10px;">Update</button>
+            </form>
+        </div>
+    </div>    
+</div>
+<div class="col-md-4">
+    <div class="card card-body text-center">
+        <h1>{{property.propertyType}} - {{property.streetAddress}}</h1>
+        <h2>{{property.city}} - {{property.stateProvince}}</h2>
+
+    </div>
+</div>
+

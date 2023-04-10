@@ -1,0 +1,17 @@
+<button class="btn btn-primary" routerLink="/Advisors/add" >Add-Advisor</button>
+<div class="col-md-4" *ngFor = "let advisor of advisors">
+    <div class="card text-center">
+        <div class="card-header bg-dark text-white d-flex justify-content-between aling-items-center">
+            {{advisor.idAdvisor}}
+            <button class="btn btn-danger"> <i class="fa-solid fa-trash" (click)="delete(advisor.idAdvisor)"></i></button>
+        </div>
+        <div class="card-body">
+            <p>Name: {{advisor.firstName}} {{advisor.lastName}}</p>
+            <p>Email: {{advisor.email}}</p>
+            <p>PhoneNumber: {{advisor.phoneNumber}}</p>
+            <p>Notes: {{advisor.notes}} </p>
+
+            <a href="" class="btn btn-primary" [routerLink]="['/Advisors/add/', advisor.idAdvisor]">Editar</a>
+        </div>
+    </div>
+</div>

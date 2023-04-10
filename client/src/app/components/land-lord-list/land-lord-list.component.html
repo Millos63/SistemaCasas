@@ -1,1 +1,17 @@
-<p>land-lord-list works!</p>
+<button class="btn btn-primary" routerLink="/LandLords/add" >Add-LandLord</button>
+<div class="col-md-4" *ngFor = "let landLord of landLords">
+    <div class="card text-center">
+        <div class="card-header bg-dark text-white d-flex justify-content-between aling-items-center">
+            {{landLord.idLandLord}}
+            <button class="btn btn-danger"> <i class="fa-solid fa-trash" (click)="delete(landLord.idLandLord)"></i></button>
+        </div>
+        <div class="card-body">
+            <p>Name: {{landLord.firstName}} {{landLord.lastName}}</p>
+            <p>Email: {{landLord.email}}</p>
+            <p>PhoneNumber: {{landLord.phoneNumber}}</p>
+
+            <a href="" class="btn btn-primary" [routerLink]="['/LandLords/add/', landLord.idLandLord]">Editar</a>
+        </div>
+    </div>
+</div>
+

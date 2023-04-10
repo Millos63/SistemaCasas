@@ -1,1 +1,33 @@
-<p>land-lord-form works!</p>
+<div class="col-md-4-offset-md-2">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <input type="text" name="firstName" [(ngModel)]="landLord.firstName" placeholder="Enter firstName" class="form-control" autofocus>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="text" name="lastName" [(ngModel)]="landLord.lastName" placeholder="Enter lastName" class="form-control" autofocus>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="text" name="email" [(ngModel)]="landLord.email" placeholder="Enter email " class="form-control" autofocus>
+                </div>
+                <div class="form-group" style="padding-top: 25px;">
+                    <input type="text" name="phoneNumber" [(ngModel)]="landLord.phoneNumber" placeholder="Enter phoneNumber " class="form-control" autofocus>
+                </div>
+                <br>
+                <button class="btn btn-success btn-block" (click)="saveNewLandLord()" routerLink="/LandLords">Save</button>
+                <button class="btn btn-success btn-block" (click)="update()" routerLink="/LandLords" style="padding-left: 10px;">Update</button>
+            </form>
+        </div>
+    </div>    
+</div>
+<div class="col-md-4">
+    <div class="card card-body text-center">
+        <h1>{{landLord.firstName}} - {{landLord.lastName}}</h1>
+        <h2>{{landLord.email}} - {{landLord.phoneNumber}}</h2>
+
+    </div>
+</div>
+

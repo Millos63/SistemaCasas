@@ -4,6 +4,8 @@ import indexRoutes from './routes/IndexRoutes'
 import landLordRoutes from './routes/LandLordRoutes'
 import morgan from 'morgan'
 import cors from 'cors' 
+import PropertyRoutes from './routes/PropertyRoutes'
+import AdvisorRoutes from './routes/AdvisorRoutes'
 
 class Server{
 	public app: Application
@@ -22,6 +24,9 @@ class Server{
     routes(): void{
         this.app.use('/', indexRoutes);
         this.app.use('/api/LandLords',landLordRoutes);
+        this.app.use('/api/Properties',PropertyRoutes);
+        this.app.use('/api/Advisors',AdvisorRoutes);
+
     }
     start(): void{
         this.app.listen(this.app.get('port'), () => {console.log("Servidor en el puerto", this.app.get('port'))});

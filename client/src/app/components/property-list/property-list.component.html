@@ -1,0 +1,26 @@
+<button class="btn btn-primary" routerLink="/Properties/add" >Add-Property</button>
+<div class="col-md-4" *ngFor = "let property of properties">
+    <div class="card text-center">
+        <div class="card-header bg-dark text-white d-flex justify-content-between aling-items-center">
+            {{property.idProperty}}
+            <button class="btn btn-danger"> <i class="fa-solid fa-trash" (click)="delete(property.idProperty)"></i></button>
+        </div>
+        <img src={{property.photo}} class="card img-top" style="height: 300px;" >
+        <div class="card-body">
+            <p>Tipo de propiedad: {{property.propertyType}}
+            <p>Dirección: {{property.streetAddress}}</p>
+            <p>Ciudad: {{property.city}}</p>
+            <p>Estado: {{property.stateProvince}}</p>
+            <p>Código postal: {{property.zipCode}}</p>
+            <p>Precio: {{property.price}}</p>
+            <p>Numero de cuartos: {{property.numBedrooms}}</p>
+            <p>Numero de baños: {{property.numBathrooms}}</p>
+            <p>Metros de terreno: {{property.landMeters}}</p>
+            <p>Metros de construcción: {{property.constructionMeters}}</p>
+            <p>Tamaño de garage: {{property.garageSize}}</p>
+            <p>Tamaño de sisterna: {{property.sisternSize}}</p>
+            <p>Bonus: {{property.bonus}}</p>   
+            <a href="" class="btn btn-primary" [routerLink]="['/Properties/add/', property.idProperty]">Editar</a>
+        </div>
+    </div>
+</div>
