@@ -12,6 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.landLordPropertyController = void 0;
 const database_1 = __importDefault(require("../database"));
 class LandLordPropertyController {
     index(req, res) {
@@ -38,8 +39,24 @@ class LandLordPropertyController {
         return __awaiter(this, void 0, void 0, function* () {
             const { idLandLord } = req.params;
             const { idProperty } = req.params;
-            yield database_1.default.query('UPDATE LandLordsProperties SET ? WHERE idLandLord = ? AND idProperty = ?', [req.body, idLandLord, idProperty]);
+            yield database_1.default.query('UPDATE LandLordsProperties SET isLandLord = ? WHERE idLandLord = ? AND idProperty = ?', [req.body.isLandLord, idLandLord, idProperty]);
             res.json({ Text: 'Registro actualizado ' + idLandLord });
         });
     }
+    detail(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { idLandLord } = req.params;
+            const { idProperty } = req.params;
+            const landLordProperty = yield database_1.default.query('SELECT * FROM landlordsproperties WHERE idLandLord = ? AND idProperty = ?', [idLandLord, idProperty]);
+            if (landLordProperty.length > 0) {
+                console.log(landLordProperty[0]);
+                return res.json(landLordProperty);
+            }
+            else {
+                res.status(404).json({ Text: 'Registro no existe' });
+            }
+        });
+    }
 }
+exports.landLordPropertyController = new LandLordPropertyController();
+exports.default = exports.landLordPropertyController;

@@ -6,6 +6,7 @@ import morgan from 'morgan'
 import cors from 'cors' 
 import PropertyRoutes from './routes/PropertyRoutes'
 import AdvisorRoutes from './routes/AdvisorRoutes'
+import LandLordPropertyRoutes from './routes/LandLordPropertyRoutes'
 
 class Server{
 	public app: Application
@@ -26,6 +27,7 @@ class Server{
         this.app.use('/api/LandLords',landLordRoutes);
         this.app.use('/api/Properties',PropertyRoutes);
         this.app.use('/api/Advisors',AdvisorRoutes);
+        this.app.use('/api/LandLordsProperties',LandLordPropertyRoutes);
 
     }
     start(): void{

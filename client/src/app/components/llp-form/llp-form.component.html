@@ -1,0 +1,28 @@
+<div class="col-md-4-offset-md-2">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <input type="text" name="idLandLord" [(ngModel)]="landLordProperty.idLandLord" placeholder="Enter idLandLord" class="form-control" autofocus>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="text" name="idProperty" [(ngModel)]="landLordProperty.idProperty" placeholder="Enter idProperty" class="form-control" autofocus>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="text" name="isLandLord" [(ngModel)]="landLordProperty.isLandLord" placeholder="Enter isLandLord" class="form-control" autofocus>
+                </div>
+                <br>
+                <button class="btn btn-success btn-block" (click)="saveNewLandLordProperty()" routerLink="/LandLordsProperties">Save</button>
+                <button class="btn btn-success btn-block" (click)="update()" routerLink="/LandLordsProperties" >Update</button>
+            </form>
+        </div>
+    </div>    
+</div>
+<div class="col-md-4">
+    <div class="card card-body text-center">
+        <h1>{{landLordProperty.idLandLord}} - {{landLordProperty.idProperty}}</h1>
+        <h2>{{landLordProperty.isLandLord}}</h2>
+    </div>
+</div>

@@ -6,6 +6,8 @@ import { PropertyListComponent } from './components/property-list/property-list.
 import { PropertyFormComponent } from './components/property-form/property-form.component';
 import { AdvisorListComponent } from './components/advisor-list/advisor-list.component';
 import { AdvisorFormComponent } from './components/advisor-form/advisor-form.component';
+import { LlpListComponent } from './components/llp-list/llp-list.component';
+import { LLPFormComponent } from './components/llp-form/llp-form.component';
 
 const routes: Routes = [
   //Rutas de LandLord
@@ -24,7 +26,12 @@ const routes: Routes = [
   {path:'', redirectTo:'/Advisors',pathMatch:'full'},
   {path: 'Advisors', component: AdvisorListComponent},
   {path: 'Advisors/add', component: AdvisorFormComponent}, 
-  {path: 'Advisors/add/:idAdvisor', component: AdvisorFormComponent}
+  {path: 'Advisors/add/:idAdvisor', component: AdvisorFormComponent},
+
+  {path:'', redirectTo:'/LandLordsProperties', pathMatch:'full'},
+  {path:'LandLordsProperties', component:LlpListComponent},
+  {path:'LandLordsProperties/add', component: LLPFormComponent},
+  {path:'LandLordsProperties/add/:idLandLord/:idProperty', component: LLPFormComponent}
 ];
 
 

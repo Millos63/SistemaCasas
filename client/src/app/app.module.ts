@@ -16,6 +16,9 @@ import { PropertyService } from './services/property.service';
 import { AdvisorFormComponent } from './components/advisor-form/advisor-form.component';
 import { AdvisorListComponent } from './components/advisor-list/advisor-list.component';
 import { AdvisorService } from './services/advisor.service';
+import { LLPFormComponent } from './components/llp-form/llp-form.component';
+import { LlpListComponent } from './components/llp-list/llp-list.component';
+import { LlpService } from './services/llp.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { AdvisorService } from './services/advisor.service';
     PropertyFormComponent,
     PropertyListComponent,
     AdvisorFormComponent,
-    AdvisorListComponent
+    AdvisorListComponent,
+    LLPFormComponent,
+    LlpListComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +39,7 @@ import { AdvisorService } from './services/advisor.service';
     HttpClientModule,
     FormsModule
   ],
-  providers: [LandLordService, PropertyService, AdvisorService],
+  providers: [LandLordService, PropertyService, AdvisorService,LlpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

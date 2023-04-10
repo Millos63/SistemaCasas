@@ -1,0 +1,14 @@
+<button class="btn btn-primary" routerLink="/LandLordsProperties/add" >Add-LandLordProperties</button>
+<div class="col-md-4" *ngFor = "let landLordProperty of LandLordsProperties">
+    <div class="card text-center">
+        <div class="card-header bg-dark text-white d-flex justify-content-between aling-items-center">
+            {{landLordProperty.idLandLord}} {{landLordProperty.idProperty}}
+            <button class="btn btn-danger" (click)="delete(landLordProperty.idLandLord, landLordProperty.idProperty)"> <i class="fa-solid fa-trash"></i></button>
+        </div>
+        <div class="card-body">
+            <p>{{landLordProperty.idLandLord}} {{landLordProperty.idProperty}}</p>
+            <p>{{landLordProperty.isLandLord}}</p>
+            <a href="" class="btn btn-primary" [routerLink]="['/LandLordsProperties/add/' + landLordProperty.idLandLord +'/' + landLordProperty.idProperty]" >Editar estudiante</a>
+        </div>
+    </div>
+</div>
